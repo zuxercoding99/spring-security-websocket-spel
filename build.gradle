@@ -1,0 +1,59 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'io.github.zuxercoding99'
+version = '1.0.0'
+description = 'Spring Security 6 WebSocket SpEL AuthorizationManager'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    withSourcesJar()
+    withJavadocJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.springframework.security:spring-security-messaging:6.3.3'
+    compileOnly 'org.springframework:spring-messaging:6.1.10'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            groupId = 'io.github.zuxercoding99'
+            artifactId = 'spring-security-websocket-spel'
+            version = '1.0.0'
+
+            pom {
+                name = 'Spring Security WebSocket SpEL'
+                description = 'Adds SpEL authorization for WebSocket messages in Spring Security 6'
+                url = 'https://github.com/zuxercoding99/spring-security-websocket-spel'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'zuxercoding99'
+                        name = 'Zuxer Coding'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/zuxercoding99/spring-security-websocket-spel.git'
+                    developerConnection = 'scm:git:ssh://github.com:zuxercoding99/spring-security-websocket-spel.git'
+                    url = 'https://github.com/zuxercoding99/spring-security-websocket-spel'
+                }
+            }
+        }
+    }
+}
