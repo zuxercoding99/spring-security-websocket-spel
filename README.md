@@ -23,6 +23,7 @@ Ensure you have the following dependencies in your project:
 ```gradle
 implementation 'org.springframework.boot:spring-boot-starter-security'
 implementation 'org.springframework.security:spring-security-messaging'
+```
 
 ### Gradle
 
