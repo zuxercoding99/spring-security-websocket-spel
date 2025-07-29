@@ -25,6 +25,28 @@ implementation 'org.springframework.boot:spring-boot-starter-security'
 implementation 'org.springframework.security:spring-security-messaging'
 ```
 
+### Gradle
+
+Add the following to your `build.gradle`:
+
+```gradle
+dependencies {
+    implementation 'io.github.zuxercoding99:spring-security-websocket-spel:1.0.0'
+}
+```
+
+### Maven
+
+Add the following to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.github.zuxercoding99</groupId>
+    <artifactId>spring-security-websocket-spel</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ---
 
 ## 🚀 Usage
