@@ -16,8 +16,7 @@ import org.springframework.security.messaging.access.intercept.MessageAuthorizat
 import org.springframework.util.Assert;
 
 /**
- * AuthorizationManager genérico para evaluar expresiones SpEL en mensajes de
- * WebSocket.
+ * AuthorizationManager which allows SpEL expressions.
  */
 public final class MessageExpressionAuthorizationManager
         implements AuthorizationManager<MessageAuthorizationContext<?>> {
@@ -26,6 +25,12 @@ public final class MessageExpressionAuthorizationManager
     private final SecurityExpressionHandler<Message<?>> expressionHandler = new DefaultMessageSecurityExpressionHandler();
     private final Expression expression;
 
+    /**
+     * Constructs a MessageExpressionAuthorizationManager with the specified SpEL
+     * expression.
+     *
+     * @param expressionString the SpEL expression to evaluate for authorization
+     */
     public MessageExpressionAuthorizationManager(String expressionString) {
         Assert.hasText(expressionString, "expressionString cannot be empty");
         this.expression = this.expressionHandler.getExpressionParser().parseExpression(expressionString);
