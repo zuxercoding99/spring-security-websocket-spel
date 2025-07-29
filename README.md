@@ -60,6 +60,8 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.simp.SimpMessageType;
 import org.springframework.security.authorization.AuthorizationManager;
 import org.springframework.security.messaging.access.intercept.MessageMatcherDelegatingAuthorizationManager;
+import org.zuxercoding99.security.MessageExpressionAuthorizationManager;
+
 
 @Configuration
 public class WebSocketSecurityConfig {
