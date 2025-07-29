@@ -1,17 +1,22 @@
 # Spring Security 6 WebSocket SpEL AuthorizationManager
 
-This library restores support for SpEL-based access authorization in Spring Security 6 with WebSocket.  
+## 📖 About
 
-Spring Security 6 removed direct SpEL support, but it includes tools to bring it back, though implementation can be complex.  
-This library simplifies the process, as there were no clear guides or GitHub repositories providing a straightforward solution.
+Spring Security 6 removed the built-in MessageExpressionAuthorizationManager used in WebSocket authorization.
+The official documentation recommends creating your own implementation to support SpEL expressions, but offers only partial examples.
+
+This library provides a ready-to-use implementation of an AuthorizationManager for WebSocket messages that evaluates SpEL expressions, fully compatible with Spring Security 6.x.
+
+It simplifies migration from older Spring Security versions and removes the need to manually adapt the code.
 
 ---
 
-## ✨ Features
+## 💡 Why this library?
 
-- ✅ Evaluate SpEL expressions for WebSocket messages (`/topic`, `/user`, etc.)  
-- ✅ Compatible with any Spring Security 6.x version  
-- ✅ Zero external dependencies beyond Spring Security and Spring Messaging  
+- ✅ Restores SpEL-based access control for WebSocket messages.
+- ✅ Uses Spring Security's official APIs (AuthorizationManager, SecurityExpressionHandler).
+- ✅ ✅ Saves time by providing a tested implementation that follows Spring's recommended migration path. 
+- ✅ No external dependencies beyond Spring Security and Spring Messaging.
 
 ---
 
